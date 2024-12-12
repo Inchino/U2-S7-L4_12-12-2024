@@ -1,21 +1,3 @@
-fetch(`https://api.pexels.com/v1/search?query=mountain&per_page=9`,{
-    method: 'GET',
-    headers: {
-        'Authorization' : 'MqyJQlhAUKzcYIWiyCF6BNqSqRFPR1x7DRjQJOt4oinE2TdIFWy9ULT7'
-    },
-})
-.then(response=>{
-    console.log('response', response)
-    if(response.ok){
-        return response.json()
-    }else{
-        throw new Error('Errore nella chiamata')
-    }
-})
-.catch((error)=>{
-    console.log('error', error)
-})
-
 const btnLoadImages = document.getElementById('loadImages');
 const btnLoadSecondaryImages = document.getElementById('loadSecondaryImages');
 
@@ -27,7 +9,7 @@ btnLoadImages.addEventListener('click', function (e) {
 })
 
 function LoadImages(){
-    fetch(`https://api.pexels.com/v1/search?query=[your-query]`,{
+    fetch(`https://api.pexels.com/v1/search?query=mountain&per_page=9`,{
         method: 'GET',
         headers: {
             'Authorization': 'MqyJQlhAUKzcYIWiyCF6BNqSqRFPR1x7DRjQJOt4oinE2TdIFWy9ULT7'
@@ -54,7 +36,7 @@ btnLoadSecondaryImages.addEventListener('click', function (e) {
 })
 
 function LoadSecondaryImages(){
-    fetch(`https://api.pexels.com/v1/search?query=[your-secondary-query]`,{
+    fetch(`https://api.pexels.com/v1/search?query=sunset&per_page=9`,{
         method: 'GET',
         headers: {
             'Authorization' : 'MqyJQlhAUKzcYIWiyCF6BNqSqRFPR1x7DRjQJOt4oinE2TdIFWy9ULT7'
@@ -70,5 +52,7 @@ function LoadSecondaryImages(){
     })
     .catch((error)=>{
         console.log('error', error)
-    })
+    })   
 }
+
+/*------ ESERCIZIO 3 ------*/
