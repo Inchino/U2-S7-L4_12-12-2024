@@ -1,5 +1,7 @@
 const btnLoadImages = document.getElementById('loadImages');
 const btnLoadSecondaryImages = document.getElementById('loadSecondaryImages');
+const inputSearch = document.getElementById("inputSearch");
+const btnSearch = document.getElementById("btnSearch");
 
 const createCards = function (photos) {
     let row = document.querySelector('.album .container .row')
@@ -127,28 +129,8 @@ const hideColumn = function (context) {
 
 /*------ Esercizio 6 ------*/
 
-function LoadSearch(){
-    fetch(`https://api.pexels.com/v1/search?query=sunset&per_page=9`,{
-        method: 'GET',
-        headers: {
-            'Authorization' : 'MqyJQlhAUKzcYIWiyCF6BNqSqRFPR1x7DRjQJOt4oinE2TdIFWy9ULT7'
-        },
-    })
-    .then(response=>{
-        console.log('response', response)
-        if(response.ok){
-            return response.json()
-        }else{
-            throw new Error('Errore nella chiamata')
-        }
-    })
-    .then((data) => {
-        console.log(data)
-        createCards(data.photos)
-      })
-    .catch((error)=>{
-        console.log('error', error)
-    })   
-}
+btnSearch.addEventListener("click", (e) => {
+    e.preventDefault();
+})
 
 
